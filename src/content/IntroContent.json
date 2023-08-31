@@ -1,12 +1,16 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Agnetas Kattpensionat",
+  "text": [
+    "Det bästa för katten är att vara i sin hemmiljö. Vi erbjuder det näst bästa, Agnetas kattpensionat, på Vreta gård i Nykvarn.",
+    "Vi har två små hus med plats för åtta katter i varje.",
+    "Vi är godkända av miljö och hälsovårdsmyndigheten i Nykvarn."
+  ],
   "button": [
     {
-      "title": "Explore"
+      "title": "Kontakt"
     },
     {
-      "title": "Learn more",
+      "title": "Priser",
       "color": "#fff"
     }
   ]

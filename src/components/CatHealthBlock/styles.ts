@@ -47,7 +47,11 @@ export const BoldText = styled('p')`
   font-weight: bolder;
 `;
 
-export const LinkText = styled('a')`
-  font-weight: bolder
-  font-size: 35px
+export const Iframe = styled('iframe')`
+  width: 600;
+  height: 450;
+  loading: lazy;
+  allowfullscreen;
 `;
+
+// <iframe  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

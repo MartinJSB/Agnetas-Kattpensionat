@@ -8,6 +8,7 @@ import { Button } from '../../common/Button';
 import Block from '../Block';
 import Input from '../../common/Input';
 import TextArea from '../../common/TextArea';
+import { SvgIcon } from '../../common/SvgIcon';
 import {
   ContactContainer,
   FormGroup,
@@ -15,10 +16,11 @@ import {
   ButtonContainer,
   Paragraph,
   Text,
-  BoldText,
-  LinkText
+  BoldText
 } from './styles';
-import ContactContent from '../../content/ContactContent.json';
+import HealthContent from '../../content/CatHealth.json';
+import { LinkText } from '../ContactForm/styles';
+import catImg from '../../../public/img/svg/Gat3.svg';
 
 const Contact = ({ title, content, id, t }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit } = useForm(
@@ -39,29 +41,15 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
       <Row justify="space-between" align="middle">
         <Col lg={12} md={11} sm={24} xs={24}>
           <Slide direction="left">
-            <h6>{title}</h6>
-            <Paragraph>
-              <Text> {ContactContent.address.address}</Text>
-              <Text> {ContactContent.address.postalAdress}</Text>
-              <Text> {ContactContent.address.postalNumber}</Text>
-            </Paragraph>
-            <Paragraph>
-              <Text> {ContactContent.number.phone}</Text>
-              <Text> {ContactContent.number.mobile}</Text>
-            </Paragraph>
+            <SvgIcon src="Gat3.svg" width="200px" height="200px" />
           </Slide>
         </Col>
         <Col lg={12} md={12} sm={24} xs={24}>
           <Slide direction="right">
             <Paragraph>
-              <BoldText> {ContactContent.info}</BoldText>
+              <h6>{title}</h6>
+              <Text> {HealthContent.text}</Text>
             </Paragraph>
-            <Paragraph>
-              <Text> {ContactContent.mail}</Text>
-            </Paragraph>
-            <LinkText href="https://goo.gl/maps/J8SdTkWm1gH1sfDm7">
-              Hitta hit!
-            </LinkText>
           </Slide>
         </Col>
       </Row>

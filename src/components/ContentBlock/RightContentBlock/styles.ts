@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const RightBlockContainer = styled("section")`
+export const RightBlockContainer = styled('section')`
   position: relative;
   padding: 10rem 0 8rem;
 
@@ -13,20 +13,19 @@ export const RightBlockContainer = styled("section")`
   }
 `;
 
-export const Content = styled("p")`
+export const Content = styled('div')`
   margin: 1.5rem 0 2rem 0;
 `;
 
-export const ContentWrapper = styled("div")`
+export const ContentWrapper = styled('div')`
   position: relative;
   max-width: 540px;
-
-  @media only screen and (max-width: 575px) {
+  s @media only screen and (max-width: 575px) {
     padding-bottom: 4rem;
   }
 `;
 
-export const ButtonWrapper = styled("div")`
+export const ButtonWrapper = styled('div')`
   display: flex;
   justify-content: space-between;
   max-width: 100%;
@@ -38,4 +37,11 @@ export const ButtonWrapper = styled("div")`
   button:last-child {
     margin-left: 20px;
   }
+`;
+
+export const ImageShadow = styled('div')`
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 `;

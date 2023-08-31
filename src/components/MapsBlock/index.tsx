@@ -16,7 +16,7 @@ import {
   Paragraph,
   Text,
   BoldText,
-  LinkText
+  Iframe
 } from './styles';
 import ContactContent from '../../content/ContactContent.json';
 
@@ -37,31 +37,17 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
   return (
     <ContactContainer id={id}>
       <Row justify="space-between" align="middle">
-        <Col lg={12} md={11} sm={24} xs={24}>
-          <Slide direction="left">
-            <h6>{title}</h6>
-            <Paragraph>
-              <Text> {ContactContent.address.address}</Text>
-              <Text> {ContactContent.address.postalAdress}</Text>
-              <Text> {ContactContent.address.postalNumber}</Text>
-            </Paragraph>
-            <Paragraph>
-              <Text> {ContactContent.number.phone}</Text>
-              <Text> {ContactContent.number.mobile}</Text>
-            </Paragraph>
-          </Slide>
-        </Col>
-        <Col lg={12} md={12} sm={24} xs={24}>
+        <Col lg={24} md={24} sm={24} xs={24}>
           <Slide direction="right">
-            <Paragraph>
-              <BoldText> {ContactContent.info}</BoldText>
-            </Paragraph>
-            <Paragraph>
-              <Text> {ContactContent.mail}</Text>
-            </Paragraph>
-            <LinkText href="https://goo.gl/maps/J8SdTkWm1gH1sfDm7">
-              Hitta hit!
-            </LinkText>
+            <h6> Hitta hit!</h6>
+            <a href="https://goo.gl/maps/J8SdTkWm1gH1sfDm7">Vreta Gård</a>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2045.5638834793021!2d17.318924777063337!3d59.15642377453102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f11897d55a49d%3A0x8c9e5158b5d56ed1!2sAgnetas%20kattpensionat!5e0!3m2!1ssv!2sse!4v1693508386585!5m2!1ssv!2sse"
+              width="100%"
+              height="450"
+              loading="lazy"
+              allowFullScreen
+            ></iframe>
           </Slide>
         </Col>
       </Row>

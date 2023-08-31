@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Row, Col, Drawer } from "antd";
-import { withTranslation } from "react-i18next";
-import Container from "../../common/Container";
-import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+import { useState } from 'react';
+import { Row, Col, Drawer } from 'antd';
+import { withTranslation } from 'react-i18next';
+import Container from '../../common/Container';
+import { SvgIcon } from '../../common/SvgIcon';
+import { Button } from '../../common/Button';
 import {
   HeaderSection,
   LogoContainer,
@@ -14,7 +14,8 @@ import {
   Label,
   Outline,
   Span,
-} from "./styles";
+  Logo
+} from './styles';
 
 const Header = ({ t }: any) => {
   const [visible, setVisibility] = useState(false);
@@ -31,29 +32,33 @@ const Header = ({ t }: any) => {
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
       element.scrollIntoView({
-        behavior: "smooth",
+        behavior: 'smooth'
       });
       setVisibility(false);
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
+        {/* TODO Fixa IDS!!?!?!?!?! */}
+        <CustomNavLinkSmall onClick={() => scrollTo('omoss')}>
+          <Span>{'Om oss'}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('priser')}>
+          <Span>{'Priser'}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('hittahit')}>
+          <Span>{'Hitta hit'}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
+        <CustomNavLinkSmall onClick={() => scrollTo('kontakt')}>
+          <Span>{'Kontakt'}</Span>
+        </CustomNavLinkSmall>
+        {/* <CustomNavLinkSmall
+          style={{ width: '180px' }}
+          onClick={() => scrollTo('contact')}
         >
           <Span>
-            <Button>{t("Contact")}</Button>
+            <Button>{'Kontakt'}</Button>
           </Span>
-        </CustomNavLinkSmall>
+        </CustomNavLinkSmall> */}
       </>
     );
   };
@@ -63,8 +68,9 @@ const Header = ({ t }: any) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
+            <Logo>Agnetas Kattpensionat</Logo>
           </LogoContainer>
+
           <NotHidden>
             <MenuItem />
           </NotHidden>
@@ -72,8 +78,8 @@ const Header = ({ t }: any) => {
             <Outline />
           </Burger>
         </Row>
-        <Drawer closable={false} visible={visible} onClose={onClose}>
-          <Col style={{ marginBottom: "2.5rem" }}>
+        <Drawer closable={false} open={visible} onClose={onClose}>
+          <Col style={{ marginBottom: '2.5rem' }}>
             <Label onClick={onClose}>
               <Col span={12}>
                 <Menu>Menu</Menu>

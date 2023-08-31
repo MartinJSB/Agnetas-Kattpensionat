@@ -1,0 +1,34 @@
+<Swiper
+  modules={[Navigation]}
+  spaceBetween={0}
+  slidesPerView={3}
+  navigation
+  loop
+>
+  {productKeys &&
+    productKeys.map((i, key) => {
+      return (
+        <SwiperSlide key={key}>
+          <div className={styles.swiperSlide}>
+            <div className={styles.swiperImg}>
+              <motion.img
+                height={340}
+                whileHover={{ scale: 1.05, cursor: 'pointer' }}
+                whileTap={{ scale: 0.95 }}
+                alt={`${key}: Can of ${productMap.get(i)?.flavour}`}
+                src={`../../assets/images/${productMap.get(i)?.flavour}.png`}
+              />
+            </div>
+            <p
+              style={{
+                color: productType === ProductType.BOTTLE ? 'black' : ''
+              }}
+              className={styles.flavourTitle}
+            >
+              {productMap.get(i)?.text.title}
+            </p>
+          </div>
+        </SwiperSlide>
+      );
+    })}
+</Swiper>;
